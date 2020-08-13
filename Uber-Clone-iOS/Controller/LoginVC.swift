@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
     
@@ -43,6 +44,7 @@ class LoginVC: UIViewController {
     private let loginButton: AuthButton = {
         let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
+        button.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         return button
     }()
     
@@ -89,9 +91,26 @@ class LoginVC: UIViewController {
         registerButton.anchor(right: view.rightAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, left: view.leftAnchor, rightPadding: 16, bottomPadding: 16, leftPadding: 16, height: 44)
     }
     
+    // MARK: - Selectors
+    
     @objc func registerPressed() {
         let signUpVC = SignUpVC()
         navigationController?.pushViewController(signUpVC, animated: true)
+    }
+    
+    @objc func loginPressed() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                let ac = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(ac, animated: true)
+                return
+            }
+            
+            print("Login was successful")
+        }
     }
     
 }

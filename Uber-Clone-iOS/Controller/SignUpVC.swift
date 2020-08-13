@@ -127,6 +127,9 @@ class SignUpVC: UIViewController {
         let accountType = segmentedControl.selectedSegmentIndex
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
+                let ac = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(ac, animated: true)
                 print("Error occured while registering user \(error)")
                 return
             }
