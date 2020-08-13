@@ -14,6 +14,9 @@
 		53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B4D24E51C0F00EC669A /* LoginVC.swift */; };
 		53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5024E5217600EC669A /* UIView+Position.swift */; };
 		53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5224E52A9200EC669A /* UITextField.swift */; };
+		53EA4B5524E5535100EC669A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5424E5535100EC669A /* SignUpVC.swift */; };
+		53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5624E5643B00EC669A /* UIColor.swift */; };
+		53EA4B5924E56E8200EC669A /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5824E56E8200EC669A /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		53EA4B4D24E51C0F00EC669A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		53EA4B5024E5217600EC669A /* UIView+Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Position.swift"; sourceTree = "<group>"; };
 		53EA4B5224E52A9200EC669A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		53EA4B5424E5535100EC669A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		53EA4B5624E5643B00EC669A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		53EA4B5824E56E8200EC669A /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				53EA4B4D24E51C0F00EC669A /* LoginVC.swift */,
+				53EA4B5424E5535100EC669A /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -91,6 +98,7 @@
 		53EA4B4A24E5198100EC669A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53EA4B5824E56E8200EC669A /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 			children = (
 				53EA4B5024E5217600EC669A /* UIView+Position.swift */,
 				53EA4B5224E52A9200EC669A /* UITextField.swift */,
+				53EA4B5624E5643B00EC669A /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,9 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */,
+				53EA4B5924E56E8200EC669A /* AuthButton.swift in Sources */,
+				53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */,
 				53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */,
 				53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */,
 				53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */,
+				53EA4B5524E5535100EC669A /* SignUpVC.swift in Sources */,
 				53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

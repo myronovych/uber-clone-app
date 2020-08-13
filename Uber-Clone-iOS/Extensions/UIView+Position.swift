@@ -20,13 +20,13 @@ extension UIView {
                 leftPadding: CGFloat = 0,
                 width: CGFloat? = nil,
                 height: CGFloat? = nil
-                ) {
+    ) {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: topPadding).isActive = true
         }
-
+        
         if let right = right {
             rightAnchor.constraint(equalTo: right, constant: -rightPadding).isActive = true
         }
@@ -56,20 +56,30 @@ extension UIView {
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    func inputContainerView(image: UIImage, textField: UITextField) -> UIView {
+    func inputContainerView(image: UIImage, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil) -> UIView {
         let view = UIView()
         let imageView = UIImageView(image: image)
         let spacer = UIView()
-
+        
         view.addSubview(imageView)
-        view.addSubview(textField)
+        
         view.addSubview(spacer)
         
-        imageView.anchor(left: view.leftAnchor, leftPadding: 8, width: 24, height: 24)
-        imageView.centerY(inView: view)
+        imageView.anchor(left: view.leftAnchor, leftPadding: 8, width: 25, height: 25)
         
-        textField.anchor(right: view.rightAnchor, left: imageView.rightAnchor, leftPadding: 8)
-        textField.centerY(inView: view)
+        if let textField = textField {
+            view.addSubview(textField)
+            textField.anchor(right: view.rightAnchor, left: imageView.rightAnchor, leftPadding: 8)
+            textField.centerY(inView: view)
+            
+            imageView.centerY(inView: view)
+        }
+        
+        if let segmentedControl = segmentedControl {
+            view.addSubview(segmentedControl)
+            segmentedControl.anchor(top: imageView.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, topPadding: 8)
+            
+        }
         
         spacer.backgroundColor = .white
         spacer.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, topPadding: 8, height: 0.75)

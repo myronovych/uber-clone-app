@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = LoginVC()
+        window?.rootViewController = UINavigationController(rootViewController: LoginVC()) 
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

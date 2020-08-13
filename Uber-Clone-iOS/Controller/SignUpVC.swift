@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  SignUpVC.swift
 //  Uber-Clone-iOS
 //
 //  Created by rs on 13.08.2020.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
-    
-    // MARK: - Properties
+class SignUpVC: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -26,9 +24,21 @@ class LoginVC: UIViewController {
         return view
     }()
     
+    private lazy var fullNameContainer: UIView = {
+        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_person_outline_white_2x"), textField: fullNameTextField)
+        view.anchor(height: 50)
+        return view
+    }()
+    
     private lazy var passwordContainer: UIView = {
         let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
         view.anchor(height: 50)
+        return view
+    }()
+    
+    private lazy var pickerContainer: UIView = {
+        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_account_box_white_2x"), segmentedControl: segmentedControl)
+        view.anchor(height: 75)
         return view
     }()
     
@@ -36,30 +46,31 @@ class LoginVC: UIViewController {
         return UITextField().textField(placeholder: "Email")
     }()
     
+    private var fullNameTextField: UITextField = {
+        return UITextField().textField(placeholder: "Full name")
+    }()
+    
     private var passwordTextField: UITextField = {
         return UITextField().textField(placeholder: "Password", isSecure: true)
     }()
     
-    private let loginButton: AuthButton = {
+    private let signUpButton: AuthButton = {
         let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
-    private let registerButton: UIButton = {
-        let button = UIButton(type: .system)
-        let title = NSMutableAttributedString(string: "Don't have an account yet? ", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray,
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)])
-        title.append(NSAttributedString(string: "Sign Up!", attributes:
-            [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor : UIColor.blueTint]))
-        button.setAttributedTitle(title, for: .normal)
-        button.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
-        return button
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Rider", "Driver"])
+        segmentedControl.selectedSegmentIndex = 0
+
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .normal)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .selected)
+        
+        return segmentedControl
     }()
-    
-    // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
@@ -78,20 +89,15 @@ class LoginVC: UIViewController {
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         titleLabel.centerX(inView: view)
         
-        let stack = UIStackView(arrangedSubviews: [emailContainer, passwordContainer, loginButton])
+        let stack = UIStackView(arrangedSubviews: [emailContainer, fullNameContainer, passwordContainer, pickerContainer, signUpButton])
         stack.axis = .vertical
         stack.spacing = 16
         stack.distribution = .equalSpacing
         view.addSubview(stack)
         stack.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, topPadding: 40, rightPadding: 16, leftPadding: 16)
         
-        view.addSubview(registerButton)
-        registerButton.anchor(right: view.rightAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, left: view.leftAnchor, rightPadding: 16, bottomPadding: 16, leftPadding: 16, height: 44)
     }
+
     
-    @objc func registerPressed() {
-        let signUpVC = SignUpVC()
-        navigationController?.pushViewController(signUpVC, animated: true)
-    }
-    
+
 }
