@@ -70,6 +70,18 @@ class SignUpVC: UIViewController {
         
         return segmentedControl
     }()
+    
+    private let signInButton: UIButton = {
+           let button = UIButton(type: .system)
+           let title = NSMutableAttributedString(string: "Already have account? ", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray,
+               NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)])
+           title.append(NSAttributedString(string: "Sign In!", attributes:
+               [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16),
+               NSAttributedString.Key.foregroundColor : UIColor.blueTint]))
+           button.setAttributedTitle(title, for: .normal)
+           button.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
+           return button
+       }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,8 +108,12 @@ class SignUpVC: UIViewController {
         view.addSubview(stack)
         stack.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, topPadding: 40, rightPadding: 16, leftPadding: 16)
         
+        view.addSubview(signInButton)
+        signInButton.anchor(right: view.rightAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, left: view.leftAnchor, rightPadding: 16, bottomPadding: 16, leftPadding: 16, height: 44)
     }
 
-    
+    @objc func signInPressed() {
+        navigationController?.popViewController(animated: true)
+    }
 
 }
