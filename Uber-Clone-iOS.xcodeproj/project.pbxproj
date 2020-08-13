@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3324E5194400EC669A /* AppDelegate.swift */; };
 		53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3524E5194400EC669A /* SceneDelegate.swift */; };
-		53EA4B3824E5194400EC669A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3724E5194400EC669A /* ViewController.swift */; };
 		53EA4B3D24E5194D00EC669A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EA4B3C24E5194D00EC669A /* Assets.xcassets */; };
 		53EA4B4024E5194D00EC669A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53EA4B3E24E5194D00EC669A /* LaunchScreen.storyboard */; };
+		53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B4D24E51C0F00EC669A /* LoginVC.swift */; };
+		53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5024E5217600EC669A /* UIView+Position.swift */; };
+		53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5224E52A9200EC669A /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53EA4B3024E5194400EC669A /* Uber-Clone-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber-Clone-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53EA4B3324E5194400EC669A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53EA4B3524E5194400EC669A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		53EA4B3724E5194400EC669A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		53EA4B3C24E5194D00EC669A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53EA4B3F24E5194D00EC669A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53EA4B4124E5194D00EC669A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53EA4B4D24E51C0F00EC669A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		53EA4B5024E5217600EC669A /* UIView+Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Position.swift"; sourceTree = "<group>"; };
+		53EA4B5224E52A9200EC669A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 				53EA4B4B24E5198300EC669A /* Model */,
 				53EA4B4A24E5198100EC669A /* View */,
 				53EA4B4924E5197B00EC669A /* Controller */,
+				53EA4B4F24E520D000EC669A /* Extensions */,
 				53EA4B4C24E519A300EC669A /* Service */,
 				53EA4B4724E5196600EC669A /* Utils */,
 				53EA4B3324E5194400EC669A /* AppDelegate.swift */,
@@ -78,7 +83,7 @@
 		53EA4B4924E5197B00EC669A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				53EA4B3724E5194400EC669A /* ViewController.swift */,
+				53EA4B4D24E51C0F00EC669A /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,6 +107,15 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		53EA4B4F24E520D000EC669A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53EA4B5024E5217600EC669A /* UIView+Position.swift */,
+				53EA4B5224E52A9200EC669A /* UITextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53EA4B3824E5194400EC669A /* ViewController.swift in Sources */,
 				53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */,
+				53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */,
+				53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */,
 				53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */,
+				53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
