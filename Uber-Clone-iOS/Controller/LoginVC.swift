@@ -108,7 +108,9 @@ class LoginVC: UIViewController {
                 self.present(ac, animated: true)
                 return
             }
-            
+            let homeVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? HomeVC
+            homeVC?.configureUI()
+            self.dismiss(animated: true)
             print("Login was successful")
         }
     }

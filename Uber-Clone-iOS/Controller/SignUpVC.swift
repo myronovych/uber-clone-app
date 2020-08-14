@@ -141,6 +141,9 @@ class SignUpVC: UIViewController {
             Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { _, _ in
                 print("Successfully created user")
             })
+            let homeVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? HomeVC
+            homeVC?.configureUI()
+            self.dismiss(animated: true)
         }
     }
 }

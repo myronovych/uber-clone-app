@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5624E5643B00EC669A /* UIColor.swift */; };
 		53EA4B5924E56E8200EC669A /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5824E56E8200EC669A /* AuthButton.swift */; };
 		53EA4B5B24E5907900EC669A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53EA4B5A24E5907800EC669A /* GoogleService-Info.plist */; };
+		53EA4B5D24E676CB00EC669A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5C24E676CB00EC669A /* HomeVC.swift */; };
+		53EA4B5F24E6ABD200EC669A /* LocationInputIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5E24E6ABD200EC669A /* LocationInputIndicationView.swift */; };
 		CBFDFF281F73BDE9FC9DC9E0 /* Pods_Uber_Clone_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6BE71DB8DABFAEB88D3D8B /* Pods_Uber_Clone_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		53EA4B5624E5643B00EC669A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		53EA4B5824E56E8200EC669A /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		53EA4B5A24E5907800EC669A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53EA4B5C24E676CB00EC669A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		53EA4B5E24E6ABD200EC669A /* LocationInputIndicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputIndicationView.swift; sourceTree = "<group>"; };
 		B982EE5F906E20B99FF082AF /* Pods-Uber-Clone-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber-Clone-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Uber-Clone-iOS/Pods-Uber-Clone-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6BE71DB8DABFAEB88D3D8B /* Pods_Uber_Clone_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uber_Clone_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +105,7 @@
 			children = (
 				53EA4B4D24E51C0F00EC669A /* LoginVC.swift */,
 				53EA4B5424E5535100EC669A /* SignUpVC.swift */,
+				53EA4B5C24E676CB00EC669A /* HomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				53EA4B5824E56E8200EC669A /* AuthButton.swift */,
+				53EA4B5E24E6ABD200EC669A /* LocationInputIndicationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,7 +157,6 @@
 				B982EE5F906E20B99FF082AF /* Pods-Uber-Clone-iOS.debug.xcconfig */,
 				317F8E748BFEABA5237ACC85 /* Pods-Uber-Clone-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -273,6 +278,8 @@
 				53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */,
 				53EA4B5924E56E8200EC669A /* AuthButton.swift in Sources */,
 				53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */,
+				53EA4B5D24E676CB00EC669A /* HomeVC.swift in Sources */,
+				53EA4B5F24E6ABD200EC669A /* LocationInputIndicationView.swift in Sources */,
 				53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */,
 				53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */,
 				53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */,
