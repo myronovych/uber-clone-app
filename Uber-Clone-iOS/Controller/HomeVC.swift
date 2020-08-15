@@ -72,7 +72,7 @@ class HomeVC: UIViewController {
     private func configureLocationInputView() {
         view.addSubview(locationInputView)
         locationInputView.delegate = self
-        locationInputView.anchor(top: view.topAnchor, right: view.rightAnchor, left: view.leftAnchor, height: 250)
+        locationInputView.anchor(top: view.topAnchor, right: view.rightAnchor, left: view.leftAnchor, height: 200)
         
         locationInputView.alpha = 0
         
