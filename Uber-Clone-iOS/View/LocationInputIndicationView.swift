@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol LocationInputIndicationViewDelegate: class {
+    func presentLocationInputView()
+}
+
 class LocationInputIndicationView: UIView {
+    
+    weak var delegate: LocationInputIndicationViewDelegate?
     
     let indicatorView: UIView = {
        let view = UIView()
@@ -28,8 +34,7 @@ class LocationInputIndicationView: UIView {
         super.init(frame: frame)
         
         backgroundColor = .white
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOpacity = 0.7
+        addShadow()
         
         
         addSubview(indicatorView)
@@ -40,10 +45,17 @@ class LocationInputIndicationView: UIView {
         
         whereToLabel.anchor(left: indicatorView.rightAnchor, leftPadding: 16)
         whereToLabel.centerY(inView: self)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(presentLocationInputView))
+        addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func presentLocationInputView() {
+        delegate?.presentLocationInputView()
     }
     
 }

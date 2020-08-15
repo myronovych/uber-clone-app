@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53464DB224E80CC40042CBAF /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53464DB124E80CC40042CBAF /* LocationInputView.swift */; };
 		53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3324E5194400EC669A /* AppDelegate.swift */; };
 		53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3524E5194400EC669A /* SceneDelegate.swift */; };
 		53EA4B3D24E5194D00EC669A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EA4B3C24E5194D00EC669A /* Assets.xcassets */; };
 		53EA4B4024E5194D00EC669A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53EA4B3E24E5194D00EC669A /* LaunchScreen.storyboard */; };
 		53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B4D24E51C0F00EC669A /* LoginVC.swift */; };
-		53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5024E5217600EC669A /* UIView+Position.swift */; };
+		53EA4B5124E5217600EC669A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5024E5217600EC669A /* UIView.swift */; };
 		53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5224E52A9200EC669A /* UITextField.swift */; };
 		53EA4B5524E5535100EC669A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5424E5535100EC669A /* SignUpVC.swift */; };
 		53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B5624E5643B00EC669A /* UIColor.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		317F8E748BFEABA5237ACC85 /* Pods-Uber-Clone-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber-Clone-iOS.release.xcconfig"; path = "Target Support Files/Pods-Uber-Clone-iOS/Pods-Uber-Clone-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		53464DB124E80CC40042CBAF /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		53EA4B3024E5194400EC669A /* Uber-Clone-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber-Clone-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53EA4B3324E5194400EC669A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53EA4B3524E5194400EC669A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +34,7 @@
 		53EA4B3F24E5194D00EC669A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53EA4B4124E5194D00EC669A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53EA4B4D24E51C0F00EC669A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		53EA4B5024E5217600EC669A /* UIView+Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Position.swift"; sourceTree = "<group>"; };
+		53EA4B5024E5217600EC669A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		53EA4B5224E52A9200EC669A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		53EA4B5424E5535100EC669A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		53EA4B5624E5643B00EC669A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				53EA4B5824E56E8200EC669A /* AuthButton.swift */,
+				53464DB124E80CC40042CBAF /* LocationInputView.swift */,
 				53EA4B5E24E6ABD200EC669A /* LocationInputIndicationView.swift */,
 			);
 			path = View;
@@ -136,7 +139,7 @@
 		53EA4B4F24E520D000EC669A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				53EA4B5024E5217600EC669A /* UIView+Position.swift */,
+				53EA4B5024E5217600EC669A /* UIView.swift */,
 				53EA4B5224E52A9200EC669A /* UITextField.swift */,
 				53EA4B5624E5643B00EC669A /* UIColor.swift */,
 			);
@@ -281,10 +284,11 @@
 				53EA4B5D24E676CB00EC669A /* HomeVC.swift in Sources */,
 				53EA4B5F24E6ABD200EC669A /* LocationInputIndicationView.swift in Sources */,
 				53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */,
-				53EA4B5124E5217600EC669A /* UIView+Position.swift in Sources */,
+				53EA4B5124E5217600EC669A /* UIView.swift in Sources */,
 				53EA4B3624E5194400EC669A /* SceneDelegate.swift in Sources */,
 				53EA4B5524E5535100EC669A /* SignUpVC.swift in Sources */,
 				53EA4B4E24E51C0F00EC669A /* LoginVC.swift in Sources */,
+				53464DB224E80CC40042CBAF /* LocationInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

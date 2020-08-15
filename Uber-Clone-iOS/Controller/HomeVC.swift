@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MapKit
+
 class HomeVC: UIViewController {
     
     // MARK: - Properties
@@ -17,6 +18,7 @@ class HomeVC: UIViewController {
     let locationManager = CLLocationManager()
     
     let inputIndicatorView = LocationInputIndicationView()
+    let locationInputView = LocationInputView()
     
     // MARK: - Lifecycle
     
@@ -52,10 +54,33 @@ class HomeVC: UIViewController {
     
     func configureUI() {
         configureMapView()
+        configureInputIndicatorView()
         
+    }
+    
+    private func configureInputIndicatorView() {
         view.addSubview(inputIndicatorView)
+        inputIndicatorView.delegate = self
         inputIndicatorView.anchor(top: view.safeAreaLayoutGuide.topAnchor, right: view.rightAnchor, left: view.safeAreaLayoutGuide.leftAnchor, topPadding: 42, rightPadding: 32, leftPadding: 32, height: 50)
         
+        inputIndicatorView.alpha = 0
+        UIView.animate(withDuration: 2) {
+            self.inputIndicatorView.alpha = 1
+        }
+    }
+    
+    private func configureLocationInputView() {
+        view.addSubview(locationInputView)
+        locationInputView.delegate = self
+        locationInputView.anchor(top: view.topAnchor, right: view.rightAnchor, left: view.leftAnchor, height: 250)
+        
+        locationInputView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.locationInputView.alpha = 1
+        }) { _ in
+            print("Debug: list is coming")
+        }
     }
     
     func configureMapView() {
@@ -97,4 +122,27 @@ extension HomeVC: CLLocationManagerDelegate {
     }
     
     
+}
+
+
+extension HomeVC: LocationInputIndicationViewDelegate {
+    func presentLocationInputView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.inputIndicatorView.alpha = 0
+        }) { _ in
+            self.configureLocationInputView()
+        }
+    }
+}
+
+extension HomeVC: LocationInpuViewDelegate {
+    @objc func hideInputView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.locationInputView.alpha = 0
+        }) { _ in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.inputIndicatorView.alpha = 1
+            })
+        }
+    }
 }

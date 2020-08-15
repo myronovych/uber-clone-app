@@ -1,5 +1,5 @@
 //
-//  UIView+Position.swift
+//  UIView.swift
 //  Uber-Clone-iOS
 //
 //  Created by rs on 13.08.2020.
@@ -84,5 +84,10 @@ extension UIView {
         spacer.backgroundColor = .white
         spacer.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, topPadding: 8, height: 0.75)
         return view
+    }
+    
+    func addShadow() {
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOpacity = 0.7
     }
 }
