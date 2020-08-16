@@ -20,6 +20,8 @@ class HomeVC: UIViewController {
     let inputIndicatorView = LocationInputIndicationView()
     let locationInputView = LocationInputView()
     
+    let tableView = UITableView()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -27,6 +29,7 @@ class HomeVC: UIViewController {
         
         checkIsUserLogged()
         locationStatus()
+        configureTableView()
     }
     
     
@@ -76,8 +79,10 @@ class HomeVC: UIViewController {
         
         locationInputView.alpha = 0
         
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.locationInputView.alpha = 1
+            self.tableView.frame.origin.y = 200
         }) { _ in
             print("Debug: list is coming")
         }
@@ -89,6 +94,19 @@ class HomeVC: UIViewController {
         
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
+    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(DestinationTableViewCell.self, forCellReuseIdentifier: DestinationTableViewCell.reuseId)
+        tableView.rowHeight = 50
+        
+        let height = view.frame.height - locationInputView.frame.height
+        tableView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: height)
+        
+        view.addSubview(tableView)
     }
 }
 
@@ -120,13 +138,12 @@ extension HomeVC: CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
         }
     }
-    
-    
 }
 
 
 extension HomeVC: LocationInputIndicationViewDelegate {
     func presentLocationInputView() {
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.inputIndicatorView.alpha = 0
         }) { _ in
@@ -139,10 +156,26 @@ extension HomeVC: LocationInpuViewDelegate {
     @objc func hideInputView() {
         UIView.animate(withDuration: 0.5, animations: {
             self.locationInputView.alpha = 0
+            self.tableView.frame.origin.y = self.view.frame.height
         }) { _ in
+            self.locationInputView.removeFromSuperview()
             UIView.animate(withDuration: 0.3, animations: {
                 self.inputIndicatorView.alpha = 1
             })
         }
     }
+}
+
+extension HomeVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DestinationTableViewCell.reuseId) as! DestinationTableViewCell
+        
+        return cell
+    }
+    
+    
 }
