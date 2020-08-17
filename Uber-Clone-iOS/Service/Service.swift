@@ -18,12 +18,12 @@ struct Service {
     
     private init() {}
     
-    func fetchUserData() {
+    func fetchUserData(completion: @escaping (User) -> Void) {
         print("DEBUG: current user \(currentUID!)")
         USR_REF.child(currentUID!).observeSingleEvent(of: .value) { (snap) in
             guard let dictionary = snap.value as? [String: Any] else { return }
-            guard let fullName = dictionary["fullName"] as? String else { return }
-            print ("DEBUG: FULL NAME \(fullName)")
+            let user = User(dictionary: dictionary)
+            completion(user)
         }
     }
 }

@@ -34,7 +34,9 @@ class HomeVC: UIViewController {
     }
     
     func fetchUserData() {
-        Service.shared.fetchUserData()
+        Service.shared.fetchUserData() { user in
+            print("USER DATA: \(user)")
+        }
     }
     
     private func checkIsUserLogged() {

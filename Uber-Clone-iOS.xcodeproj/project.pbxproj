@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		534099E224EA5B6D00D216C1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534099E124EA5B6D00D216C1 /* Service.swift */; };
+		534099E424EA676400D216C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534099E324EA676400D216C1 /* User.swift */; };
 		53464DB224E80CC40042CBAF /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53464DB124E80CC40042CBAF /* LocationInputView.swift */; };
 		53740E9D24E9AE8D00DB4213 /* DestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740E9C24E9AE8D00DB4213 /* DestinationTableViewCell.swift */; };
 		53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA4B3324E5194400EC669A /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		317F8E748BFEABA5237ACC85 /* Pods-Uber-Clone-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber-Clone-iOS.release.xcconfig"; path = "Target Support Files/Pods-Uber-Clone-iOS/Pods-Uber-Clone-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		534099E124EA5B6D00D216C1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		534099E324EA676400D216C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53464DB124E80CC40042CBAF /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		53740E9C24E9AE8D00DB4213 /* DestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationTableViewCell.swift; sourceTree = "<group>"; };
 		53EA4B3024E5194400EC669A /* Uber-Clone-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber-Clone-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 		53EA4B4B24E5198300EC669A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				534099E324EA676400D216C1 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */,
 				53EA4B5D24E676CB00EC669A /* HomeVC.swift in Sources */,
 				53EA4B5F24E6ABD200EC669A /* LocationInputIndicationView.swift in Sources */,
+				534099E424EA676400D216C1 /* User.swift in Sources */,
 				53EA4B5324E52A9200EC669A /* UITextField.swift in Sources */,
 				53740E9D24E9AE8D00DB4213 /* DestinationTableViewCell.swift in Sources */,
 				53EA4B5124E5217600EC669A /* UIView.swift in Sources */,
