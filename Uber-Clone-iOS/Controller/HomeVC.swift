@@ -30,8 +30,12 @@ class HomeVC: UIViewController {
         checkIsUserLogged()
         locationStatus()
         configureTableView()
+        fetchUserData()
     }
     
+    func fetchUserData() {
+        Service.shared.fetchUserData()
+    }
     
     private func checkIsUserLogged() {
         if let user = Auth.auth().currentUser {
