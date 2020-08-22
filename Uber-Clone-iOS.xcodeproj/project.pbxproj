@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5300A47B24F11770004F6191 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300A47A24F11770004F6191 /* LocationManager.swift */; };
 		534099E224EA5B6D00D216C1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534099E124EA5B6D00D216C1 /* Service.swift */; };
 		534099E424EA676400D216C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534099E324EA676400D216C1 /* User.swift */; };
 		53464DB224E80CC40042CBAF /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53464DB124E80CC40042CBAF /* LocationInputView.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		317F8E748BFEABA5237ACC85 /* Pods-Uber-Clone-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber-Clone-iOS.release.xcconfig"; path = "Target Support Files/Pods-Uber-Clone-iOS/Pods-Uber-Clone-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5300A47A24F11770004F6191 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		534099E124EA5B6D00D216C1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		534099E324EA676400D216C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53464DB124E80CC40042CBAF /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				534099E124EA5B6D00D216C1 /* Service.swift */,
+				5300A47A24F11770004F6191 /* LocationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				53EA4B3424E5194400EC669A /* AppDelegate.swift in Sources */,
 				534099E224EA5B6D00D216C1 /* Service.swift in Sources */,
+				5300A47B24F11770004F6191 /* LocationManager.swift in Sources */,
 				53EA4B5924E56E8200EC669A /* AuthButton.swift in Sources */,
 				53EA4B5724E5643B00EC669A /* UIColor.swift in Sources */,
 				53EA4B5D24E676CB00EC669A /* HomeVC.swift in Sources */,

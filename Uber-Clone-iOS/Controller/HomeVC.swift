@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     // MARK: - Properties
     
     let mapView = MKMapView()
-    let locationManager = CLLocationManager()
+    let locationManager = LocationManager.shared.locationManeger
     
     let inputIndicatorView = LocationInputIndicationView()
     let locationInputView = LocationInputView()
@@ -31,11 +31,20 @@ class HomeVC: UIViewController {
         locationStatus()
         configureTableView()
         fetchUserData()
+        signOutUser()
     }
     
     func fetchUserData() {
         Service.shared.fetchUserData() { user in
             print("USER DATA: \(user)")
+        }
+    }
+    
+    private func showLoginVC() {
+        let destVC = UINavigationController(rootViewController: LoginVC())
+        destVC.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(destVC, animated: true)
         }
     }
     
@@ -45,17 +54,14 @@ class HomeVC: UIViewController {
             configureUI()
         } else {
             print("User not logged in")
-            let destVC = UINavigationController(rootViewController: LoginVC())
-            destVC.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
-                self.present(destVC, animated: true)
-            }
+            showLoginVC()
         }
     }
     
     private func signOutUser() {
         do {
             try Auth.auth().signOut()
+            showLoginVC()
         } catch {
             print("Error occured while sign out \(error)")
         }
@@ -116,10 +122,9 @@ class HomeVC: UIViewController {
     }
 }
 
-extension HomeVC: CLLocationManagerDelegate {
+extension HomeVC {
     
     func locationStatus() {
-        locationManager.delegate = self
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
@@ -139,11 +144,7 @@ extension HomeVC: CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
+   
 }
 
 

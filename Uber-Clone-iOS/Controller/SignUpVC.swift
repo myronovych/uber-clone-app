@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import GeoFire
 
 class SignUpVC: UIViewController {
+    
+    var location = LocationManager.shared.locationManeger.location
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -135,15 +138,25 @@ class SignUpVC: UIViewController {
             }
             
             guard let uid = result?.user.uid else { return }
-            
             let values = ["email": email, "fullName": fullName, "accountType": accountType] as [String : Any]
             
-            Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { _, _ in
+            if accountType == 1 {
+                guard let location = self.location else { return }
+                let geofire = GeoFire(firebaseRef: DRIVER_LOC_REF)
+                geofire.setLocation(location, forKey: uid) { error in
+                    if let error = error {
+                        print("Error occured while setting location for driver \(error)")
+                    }
+                }
+            }
+            
+            
+            USR_REF.child(uid).updateChildValues(values, withCompletionBlock: { _, _ in
                 print("Successfully created user")
+                let homeVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? HomeVC
+                homeVC?.configureUI()
+                self.dismiss(animated: true)
             })
-            let homeVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? HomeVC
-            homeVC?.configureUI()
-            self.dismiss(animated: true)
         }
     }
 }

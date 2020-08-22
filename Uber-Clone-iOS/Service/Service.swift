@@ -11,16 +11,18 @@ import Firebase
 
 let DB_REF = Database.database().reference()
 let USR_REF = DB_REF.child("users")
+let DRIVER_LOC_REF = DB_REF.child("drivers-location")
 
 struct Service {
     static let shared = Service()
-    let currentUID = Auth.auth().currentUser?.uid
     
     private init() {}
     
     func fetchUserData(completion: @escaping (User) -> Void) {
-        print("DEBUG: current user \(currentUID!)")
-        USR_REF.child(currentUID!).observeSingleEvent(of: .value) { (snap) in
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
+        print("DEBUG: current user \(currentUID)")
+        
+        USR_REF.child(currentUID).observeSingleEvent(of: .value) { (snap) in
             guard let dictionary = snap.value as? [String: Any] else { return }
             let user = User(dictionary: dictionary)
             completion(user)
